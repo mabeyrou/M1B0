@@ -29,7 +29,15 @@ X_train, X_test, y_train, y_test = split(X, y)
 # charger le modèle
 model_2024_08 = joblib.load(join('models','model_2024_08.pkl'))
 
-# predire sur les valeurs de tests
+#%% predire sur les valeurs de train
+y_pred = model_predict(model_2024_08, X_train)
+
+# mesurer les performances MSE, MAE et R²
+perf = evaluate_performance(y_train, y_pred)  
+
+print_data(perf)
+
+#%% predire sur les valeurs de tests
 y_pred = model_predict(model_2024_08, X_test)
 
 # mesurer les performances MSE, MAE et R²
@@ -37,8 +45,9 @@ perf = evaluate_performance(y_test, y_pred)
 
 print_data(perf)
 
-# WARNING ZONE on test d'entrainer le modèle plus longtemps mais sur les mêmes données
+#%% WARNING ZONE on test d'entrainer le modèle plus longtemps mais sur les mêmes données
 model2 = train_model(model_2024_08, X_train, y_train)
 y_pred = model_predict(model_2024_08, X_test)
 perf = evaluate_performance(y_test, y_pred)  
 print_data(perf, exp_name="exp 2")
+
