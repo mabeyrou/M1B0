@@ -1,7 +1,7 @@
-from modules.preprocess import preprocessing, split
-from modules.evaluate import evaluate_performance
-from modules.print_draw import print_data, draw_loss
-from models.models import create_nn_model, train_model, model_predict
+from api.modules.preprocess import preprocessing, split
+from api.modules.evaluate import evaluate_performance
+from api.modules.print_draw import print_data, draw_loss
+from api.models.models import create_nn_model, train_model, model_predict
 import pandas as pd
 import joblib
 from os.path import join as join
@@ -17,15 +17,15 @@ X, y, _ = preprocessing(df_old)
 # split data in train and test dataset
 X_train, X_test, y_train, y_test = split(X, y)
 
-# # create a new model 
-# model = create_nn_model(X_train.shape[1])
+# create a new model 
+model = create_nn_model(X_train.shape[1])
 
-# # entraîner le modèle
-# model, hist = train_model(model, X_train, y_train, X_val=X_test, y_val=y_test)
-# draw_loss(hist)
+# entraîner le modèle
+model, hist = train_model(model, X_train, y_train, X_val=X_test, y_val=y_test)
+draw_loss(hist)
 
-# # sauvegarder le modèle
-# joblib.dump(model, join('models','model_2024_08.pkl'))
+# sauvegarder le modèle
+joblib.dump(model, join('models','model_2024_08.pkl'))
 
 # charger le modèle
 model_2024_08 = joblib.load(join('models','model_2024_08.pkl'))

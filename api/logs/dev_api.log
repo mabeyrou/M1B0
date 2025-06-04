@@ -1,0 +1,21 @@
+2025-06-03 11:58:02 | DEBUG | [[-1.56856487 -1.72564653  7.58320318 -0.71286467  0.          1.
+   1.          0.          0.          0.          1.          0.
+   0.          1.          0.          0.          0.          0.
+   0.          0.          0.          0.          1.          0.
+   1.        ]]
+2025-06-03 12:02:35 | DEBUG | [15533.666]
+2025-06-03 12:04:45 | DEBUG | [10859.538]
+2025-06-03 12:14:12 | DEBUG | [10859.538]
+2025-06-03 12:15:02 | DEBUG | [10859.538]
+2025-06-03 12:17:28 | DEBUG | [10859.538]
+2025-06-03 12:19:35 | DEBUG | <class 'numpy.ndarray'>
+2025-06-03 12:21:30 | DEBUG | 1
+2025-06-03 12:22:47 | DEBUG | 10859.538
+2025-06-03 12:33:43 | INFO | prediction: 43032.31640625 avec le profile suivant : age=19 taille=210.0 poids=150.0 sexe='H' sport_licence='oui' niveau_etude='doctorat' region='Île-de-France' smoker='non' nationalité_francaise='oui' revenu_estime_mois=3400
+2025-06-03 12:37:26 | INFO | prediction: 24391.05859375 avec le profile suivant : age=19 taille=210.0 poids=150.0 sexe='H' sport_licence='oui' niveau_etude='aucun' region='Île-de-France' smoker='non' nationalité_francaise='oui' revenu_estime_mois=3400
+2025-06-03 12:37:29 | INFO | prediction: 24391.05859375 avec le profile suivant : age=19 taille=210.0 poids=150.0 sexe='H' sport_licence='oui' niveau_etude='aucun' region='Île-de-France' smoker='non' nationalité_francaise='oui' revenu_estime_mois=3400
+2025-06-03 12:37:30 | INFO | prediction: 24391.05859375 avec le profile suivant : age=19 taille=210.0 poids=150.0 sexe='H' sport_licence='oui' niveau_etude='aucun' region='Île-de-France' smoker='non' nationalité_francaise='oui' revenu_estime_mois=3400
+2025-06-03 12:58:18 | INFO | prediction: 553.732421875 avec le profile suivant : age=30 taille=170.0 poids=60.0 sexe='H' sport_licence='non' niveau_etude='bac+2' region='Normandie' smoker='non' nationalité_francaise='non' revenu_estime_mois=1700
+2025-06-03 12:59:51 | INFO | prediction: 553.72998046875 avec le profile suivant : age=30 taille=170.0 poids=60.0 sexe='H' sport_licence='non' niveau_etude='bac+2' region='Normandie' smoker='non' nationalité_francaise='non' revenu_estime_mois=1700
+2025-06-03 14:21:46 | INFO | prediction: 553.72998046875 avec le profile suivant : age=30 taille=170.0 poids=60.0 sexe='H' sport_licence='non' niveau_etude='bac+2' region='Normandie' smoker='non' nationalité_francaise='non' revenu_estime_mois=1700
+2025-06-03 14:21:59 | INFO | prediction: 386.0 avec le profile suivant : age=90 taille=170.0 poids=210.0 sexe='H' sport_licence='non' niveau_etude='bac+2' region='Normandie' smoker='oui' nationalité_francaise='non' revenu_estime_mois=400

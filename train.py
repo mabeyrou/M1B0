@@ -1,7 +1,7 @@
 import mlflow
-from modules.preprocess import preprocessing, split
-from modules.evaluate import evaluate_performance
-from models.models import train_model, model_predict
+from api.modules.preprocess import preprocessing, split
+from api.modules.evaluate import evaluate_performance
+from api.models.models import train_model, model_predict
 import pandas as pd
 from os.path import join as join
 import joblib
