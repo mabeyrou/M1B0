@@ -15,7 +15,7 @@ preprocessor = joblib.load(join('api', 'models', 'preprocessor.pkl'))
 
 @router.get('/health')
 async def health():
-    return {'message': 'The server is up and running'}
+    return {'is_running': True}
 
 @router.post('/predict')
 async def predict(profile: Profile):
