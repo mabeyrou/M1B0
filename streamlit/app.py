@@ -1,7 +1,10 @@
 import streamlit as st
 from loguru import logger
 import requests
-import json
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 logger.remove()
 
@@ -13,7 +16,7 @@ logger.add("logs/dev_streamlit.log",
           enqueue=True,
           format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
 
-API_URL = 'http://localhost:8000/api'
+API_URL = os.getenv('API_URL')
 
 def predict(form_data):
     response = requests.post(url=f'{API_URL}/predict', json=form_data)
