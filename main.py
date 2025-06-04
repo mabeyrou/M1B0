@@ -1,7 +1,7 @@
-from api.modules.preprocess import preprocessing, split
-from api.modules.evaluate import evaluate_performance
-from api.modules.print_draw import print_data, draw_loss
-from api.models.models import create_nn_model, train_model, model_predict
+from .api.modules.preprocess import preprocessing, split
+from .api.modules.evaluate import evaluate_performance
+from .api.modules.print_draw import print_data, draw_loss
+from .api.models.models import create_nn_model, train_model, model_predict
 import pandas as pd
 import joblib
 from os.path import join as join

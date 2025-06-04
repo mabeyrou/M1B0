@@ -1,16 +1,17 @@
 from fastapi import APIRouter, HTTPException, Response
-from schemas import Profile
 from loguru import logger
-import joblib
 from os.path import join
-from models.models import model_predict
 import pandas as pd
+import joblib
+
+from .schemas import Profile
+from .models.models import model_predict
 
 
 router = APIRouter(prefix='/api')
 
-model = joblib.load(join('models','model_2025_06_03.pkl'))
-preprocessor = joblib.load(join('models', 'preprocessor.pkl'))
+model = joblib.load(join('api', 'models','model_2025_06_03.pkl'))
+preprocessor = joblib.load(join('api', 'models', 'preprocessor.pkl'))
 
 @router.get('/health')
 async def health():

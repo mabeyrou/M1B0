@@ -1,9 +1,9 @@
 from loguru import logger
 from fastapi import FastAPI
-from api_routes import router as webcam_routes
+from .api_routes import router
 
 app = FastAPI()
-app.include_router(webcam_routes)
+app.include_router(router)
 
 logger.remove()
 
