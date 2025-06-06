@@ -1,2 +1,0 @@
-2025-06-04 15:05:40 | INFO | Réentraînement demandé sans nouvelles données, avec 50 epochs.
-2025-06-04 15:05:40 | INFO | Réponse de l'API de réentraînement: {'message': 'retrain'}

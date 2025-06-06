@@ -18,3 +18,6 @@ class Profile(BaseModel):
     smoker: OuiNon
     nationalité_francaise: OuiNon
     revenu_estime_mois: int
+
+class RetrainParams(BaseModel):
+    epochs: int

@@ -2,14 +2,14 @@ import streamlit as st
 from loguru import logger
 import requests
 from dotenv import load_dotenv
-import os
+from os import getenv
 import time
 
 load_dotenv()
 
 logger.remove()
 
-logger.add("logs/dev_streamlit.log",
+logger.add("./streamlit/logs/dev_streamlit.log",
           rotation="10 MB",
           retention="7 days",
           compression="zip",
@@ -17,7 +17,7 @@ logger.add("logs/dev_streamlit.log",
           enqueue=True,
           format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
 
-API_URL = os.getenv('API_URL')
+API_URL = getenv('API_URL')
 
 def predict(form_data):
     response = requests.post(url=f'{API_URL}/predict', json=form_data)
@@ -35,17 +35,18 @@ def check_health():
         return {"is_running": False, "status": "offline"}
 
 def retrain(uploaded_file, num_epochs):
-    file = None
-    data_to_send = {'epochs': num_epochs}
+    files_payload = None
+    data_payload = {'epochs': num_epochs}
 
     if uploaded_file is not None:
-        file = {'file': (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type)}
+        files_payload = {'file': (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type)}
         logger.info(f"Préparation de l'envoi du fichier {uploaded_file.name} pour le réentraînement avec {num_epochs} epochs.")
     else:
         logger.info(f"Réentraînement demandé sans nouvelles données, avec {num_epochs} epochs.")
 
     try:
-        response = requests.post(url=f'{API_URL}/retrain', files=file, data=data_to_send, timeout=300)
+        logger.debug(f"Data payload: {data_payload}, Files: {files_payload is not None}")
+        response = requests.post(url=f'{API_URL}/retrain', files=files_payload, data=data_payload, timeout=3000)
         response.raise_for_status()
         logger.info(f"Réponse de l'API de réentraînement: {response.json()}")
         return response.json()
