@@ -48,3 +48,7 @@
 2025-06-06 07:42:36 | DEBUG | Calculating new performances... (5/5)
 2025-06-06 07:42:36 | INFO | New model performances: {'MSE': 13550536.162403876, 'MAE': 2300.02985541515, 'R²': 0.874824434365599}
 2025-06-06 08:52:04 | INFO | prediction: 1072.800048828125 avec le profile suivant : age=30 taille=170.0 poids=60.0 sexe='H' sport_licence='non' niveau_etude='bac' region='Auvergne-Rhône-Alpes' smoker='non' nationalité_francaise='non' revenu_estime_mois=1700
+2025-06-06 08:57:24 | INFO | prediction: 14648.8603515625 avec le profile suivant : age=30 taille=170.0 poids=60.0 sexe='H' sport_licence='non' niveau_etude='bac' region='Auvergne-Rhône-Alpes' smoker='non' nationalité_francaise='oui' revenu_estime_mois=1700
+2025-06-06 09:01:46 | INFO | prediction: 1072.800048828125 avec le profile suivant : age=30 taille=170.0 poids=60.0 sexe='H' sport_licence='non' niveau_etude='bac' region='Auvergne-Rhône-Alpes' smoker='non' nationalité_francaise='non' revenu_estime_mois=1700
+2025-06-06 09:01:49 | INFO | prediction: 14648.8603515625 avec le profile suivant : age=30 taille=170.0 poids=60.0 sexe='H' sport_licence='non' niveau_etude='bac' region='Auvergne-Rhône-Alpes' smoker='non' nationalité_francaise='oui' revenu_estime_mois=1700
+2025-06-06 09:01:56 | INFO | prediction: 12346.66015625 avec le profile suivant : age=30 taille=170.0 poids=60.0 sexe='H' sport_licence='non' niveau_etude='bac' region='Auvergne-Rhône-Alpes' smoker='oui' nationalité_francaise='oui' revenu_estime_mois=3000

@@ -1,14 +1,10 @@
 import streamlit as st
 from loguru import logger
 import requests
-from dotenv import load_dotenv
-from os import getenv
-import time
 
-load_dotenv()
+from api_client import predict, check_health, retrain
 
 logger.remove()
-
 logger.add("./streamlit/logs/dev_streamlit.log",
           rotation="10 MB",
           retention="7 days",
@@ -17,54 +13,14 @@ logger.add("./streamlit/logs/dev_streamlit.log",
           enqueue=True,
           format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
 
-API_URL = getenv('API_URL')
-
-def predict(form_data):
-    response = requests.post(url=f'{API_URL}/predict', json=form_data)
-
-    return response.json()
-
-def check_health():
-    time.sleep(1)
-    try:
-        response = requests.get(url=f'{API_URL}/health', timeout=5)
-        response.raise_for_status()
-        return response.json()
-    except requests.exceptions.RequestException as error:
-        logger.error(f"API health check failed: {error}")
-        return {"is_running": False, "status": "offline"}
-
-def retrain(uploaded_file, num_epochs):
-    files_payload = None
-    data_payload = {'epochs': num_epochs}
-
-    if uploaded_file is not None:
-        files_payload = {'file': (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type)}
-        logger.info(f"Préparation de l'envoi du fichier {uploaded_file.name} pour le réentraînement avec {num_epochs} epochs.")
-    else:
-        logger.info(f"Réentraînement demandé sans nouvelles données, avec {num_epochs} epochs.")
-
-    try:
-        logger.debug(f"Data payload: {data_payload}, Files: {files_payload is not None}")
-        response = requests.post(url=f'{API_URL}/retrain', files=files_payload, data=data_payload, timeout=3000)
-        response.raise_for_status()
-        logger.info(f"Réponse de l'API de réentraînement: {response.json()}")
-        return response.json()
-    except requests.exceptions.RequestException as error:
-        logger.error(f"Erreur lors de la requête de réentraînement à l'API: {error}")
-        return {"success": False, "message": str(error)}
-    except Exception as error:
-        logger.error(f"Erreur inattendue lors du réentraînement: {error}")
-        return {"success": False, "message": f"Erreur inattendue: {str(error)}"}
-
-
-def main():
+def initialize_session_state():
     if 'is_running' not in st.session_state:
         health_status = check_health()
         st.session_state.is_running = health_status.get('is_running', False)
     if 'checking_health' not in st.session_state:
         st.session_state.checking_health = False
 
+def render_prediction_form():
     st.header('Prédiction du montant d\'un prêt')
 
     @st.dialog("Prédiction du prêt")
@@ -85,11 +41,11 @@ def main():
         )
         taille = st.number_input(
             label='Taille',
-             min_value=float(100),
-             max_value=float(220),
-             step=0.1,
-             value=float(170),
-             disabled=not st.session_state.is_running
+            min_value=float(100),
+            max_value=float(220),
+            step=0.1,
+            value=float(170),
+            disabled=not st.session_state.is_running
         )
         poids = st.number_input(
             label='Poids',
@@ -101,8 +57,8 @@ def main():
         )
         sexe = st.radio(
             label='Genre',
-             options=['H','F'],
-             disabled=not st.session_state.is_running
+            options=['H','F'],
+            disabled=not st.session_state.is_running
         )
         sport_licence = st.toggle(
             label='Licence de sport',
@@ -161,7 +117,8 @@ def main():
                 st.error(f"Erreur lors de la prédiction : {error}")
         elif submitted and not st.session_state.is_running:
             st.error("L'API est hors ligne. Veuillez réessayer plus tard.")
-        
+
+def render_sidebar():
     with st.sidebar:
         st.subheader('Etat du modèle', divider=True)
         
@@ -233,6 +190,12 @@ def main():
                                 st.success(result.get("message", "Modèle réentraîné avec succès!"))
                             else:
                                 st.error(result.get("message", "Échec du réentraînement du modèle."))
+                                
+def main():
+    st.set_page_config(page_title="Prédiction de Prêt")
+    initialize_session_state()
+    render_prediction_form()
+    render_sidebar()
                                 
 if __name__ == "__main__":
     main()
