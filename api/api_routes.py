@@ -34,6 +34,7 @@ async def predict(profile: Profile):
         logger.info(f'prediction: {prediction} avec le profile suivant : {profile}')
         return {'prediction': str(prediction)}
     except HTTPException as error:
+        logger.error(f'Something went wrong during prediction: {error}, with profile: {str(prediction)}')
         raise HTTPException(status_code=500, detail='Something went wrong during prediction: {error}')
 
 @router.post('/retrain')
