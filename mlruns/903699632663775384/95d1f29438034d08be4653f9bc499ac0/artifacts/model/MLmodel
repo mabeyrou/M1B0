@@ -1,0 +1,24 @@
+artifact_path: model
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.22.0
+model_size_bytes: 1418
+model_uuid: 023a67349318469bb21952dfa60ea032
+prompts: null
+run_id: 95d1f29438034d08be4653f9bc499ac0
+signature:
+  inputs: '[{"type": "string", "name": "sexe", "required": true}, {"type": "string",
+    "name": "sport_licence", "required": true}, {"type": "string", "name": "niveau_etude",
+    "required": true}, {"type": "string", "name": "region", "required": true}, {"type":
+    "string", "name": "smoker", "required": true}, {"type": "string", "name": "nationalit\u00e9_francaise",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1,
+    21]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-06-07 19:59:51.548626'

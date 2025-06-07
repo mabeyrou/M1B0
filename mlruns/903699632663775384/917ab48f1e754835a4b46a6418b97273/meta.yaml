@@ -1,0 +1,16 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/917ab48f1e754835a4b46a6418b97273/artifacts
+deleted_time: 1749326045306
+end_time: 1749325921901
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: deleted
+run_id: 917ab48f1e754835a4b46a6418b97273
+run_name: gentle-shoat-488
+run_uuid: 917ab48f1e754835a4b46a6418b97273
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749325861850
+status: 4
+tags: []
+user_id: marou

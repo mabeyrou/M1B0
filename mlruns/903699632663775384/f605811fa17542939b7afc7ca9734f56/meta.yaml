@@ -1,0 +1,16 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/f605811fa17542939b7afc7ca9734f56/artifacts
+deleted_time: 1749326713250
+end_time: 1749326473821
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: deleted
+run_id: f605811fa17542939b7afc7ca9734f56
+run_name: adaptable-auk-929
+run_uuid: f605811fa17542939b7afc7ca9734f56
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749326423626
+status: 3
+tags: []
+user_id: marou

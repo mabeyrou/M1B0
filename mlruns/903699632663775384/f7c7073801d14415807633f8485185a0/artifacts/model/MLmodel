@@ -1,0 +1,22 @@
+artifact_path: model
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.22.0
+model_size_bytes: 1059
+model_uuid: 4a82689a87604c4483e0e203ffee3938
+prompts: null
+run_id: f7c7073801d14415807633f8485185a0
+signature:
+  inputs: '[{"type": "long", "name": "age", "required": true}, {"type": "double",
+    "name": "taille", "required": true}, {"type": "double", "name": "poids", "required":
+    true}, {"type": "long", "name": "revenu_estime_mois", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1,
+    4]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-06-07 19:59:48.116096'

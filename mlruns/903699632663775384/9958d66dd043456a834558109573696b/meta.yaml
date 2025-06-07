@@ -1,0 +1,16 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/9958d66dd043456a834558109573696b/artifacts
+deleted_time: 1749328449437
+end_time: 1749328421782
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: deleted
+run_id: 9958d66dd043456a834558109573696b
+run_name: amusing-sponge-750
+run_uuid: 9958d66dd043456a834558109573696b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749328371457
+status: 3
+tags: []
+user_id: marou

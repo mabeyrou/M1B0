@@ -1,0 +1,15 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/f10d080a9d11427ca14d8bf023b7cbc2/artifacts
+end_time: 1749328985400
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: active
+run_id: f10d080a9d11427ca14d8bf023b7cbc2
+run_name: rebellious-shark-253
+run_uuid: f10d080a9d11427ca14d8bf023b7cbc2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749328905272
+status: 3
+tags: []
+user_id: marou

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/4c61b60a2e3c4db1a0abdf26000f2539/artifacts
+end_time: 1749326351723
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: active
+run_id: 4c61b60a2e3c4db1a0abdf26000f2539
+run_name: bald-ape-513
+run_uuid: 4c61b60a2e3c4db1a0abdf26000f2539
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749326272345
+status: 3
+tags: []
+user_id: marou

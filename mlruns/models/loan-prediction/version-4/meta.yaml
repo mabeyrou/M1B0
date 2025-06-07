@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1749326351718
+current_stage: None
+description: null
+last_updated_timestamp: 1749326351718
+name: loan-prediction
+run_id: 4c61b60a2e3c4db1a0abdf26000f2539
+run_link: null
+source: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/4c61b60a2e3c4db1a0abdf26000f2539/artifacts/iris_model
+status: READY
+status_message: null
+storage_location: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/4c61b60a2e3c4db1a0abdf26000f2539/artifacts/iris_model
+user_id: null
+version: 4

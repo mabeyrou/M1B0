@@ -1,0 +1,16 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/f7a84a01302c4607925b90fad70f1937/artifacts
+deleted_time: 1749328693813
+end_time: 1749328520665
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: deleted
+run_id: f7a84a01302c4607925b90fad70f1937
+run_name: suave-crane-771
+run_uuid: f7a84a01302c4607925b90fad70f1937
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749328471822
+status: 3
+tags: []
+user_id: marou

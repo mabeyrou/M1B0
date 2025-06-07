@@ -1,0 +1,15 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/7d2c106818164f129198c2c77aa0b71d/artifacts
+end_time: 1749326787243
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: active
+run_id: 7d2c106818164f129198c2c77aa0b71d
+run_name: debonair-shark-979
+run_uuid: 7d2c106818164f129198c2c77aa0b71d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749326736440
+status: 3
+tags: []
+user_id: marou

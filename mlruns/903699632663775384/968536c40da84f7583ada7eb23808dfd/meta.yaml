@@ -1,0 +1,15 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/968536c40da84f7583ada7eb23808dfd/artifacts
+end_time: 1749327046271
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: active
+run_id: 968536c40da84f7583ada7eb23808dfd
+run_name: monumental-seal-385
+run_uuid: 968536c40da84f7583ada7eb23808dfd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749326993255
+status: 3
+tags: []
+user_id: marou

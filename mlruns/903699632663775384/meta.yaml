@@ -1,0 +1,6 @@
+artifact_location: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384
+creation_time: 1749325861552
+experiment_id: '903699632663775384'
+last_update_time: 1749325861552
+lifecycle_stage: active
+name: Retraining loan prediction model

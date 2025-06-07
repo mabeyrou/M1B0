@@ -1,0 +1,9 @@
+digest: 6e731e2e
+name: dataset
+profile: '{"num_rows": 2000, "num_elements": 8000}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "age", "required": true}, {"type":
+  "double", "name": "taille", "required": true}, {"type": "double", "name": "poids",
+  "required": true}, {"type": "long", "name": "revenu_estime_mois", "required": true}]}'
+source: '{"tags": {"mlflow.user": "marou", "mlflow.source.name": "retrain.py", "mlflow.source.type":
+  "LOCAL", "mlflow.source.git.commit": "9fac65bef9d490079ec95cef42389ac26f8e3ec1"}}'
+source_type: code

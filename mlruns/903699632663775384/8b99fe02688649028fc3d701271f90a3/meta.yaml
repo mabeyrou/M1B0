@@ -1,0 +1,16 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/8b99fe02688649028fc3d701271f90a3/artifacts
+deleted_time: 1749328134462
+end_time: 1749328039955
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: deleted
+run_id: 8b99fe02688649028fc3d701271f90a3
+run_name: funny-lamb-689
+run_uuid: 8b99fe02688649028fc3d701271f90a3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749327935953
+status: 3
+tags: []
+user_id: marou

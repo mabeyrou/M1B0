@@ -17,15 +17,15 @@ X, y, _ = preprocessing(df_old)
 # split data in train and test dataset
 X_train, X_test, y_train, y_test = split(X, y)
 
-# # create a new model 
-# model = create_nn_model(X_train.shape[1])
+# create a new model 
+model = create_nn_model(X_train.shape[1])
 
-# # entraîner le modèle
-# model, hist = train_model(model, X_train, y_train, X_val=X_test, y_val=y_test)
-# draw_loss(hist)
+# entraîner le modèle
+model, hist = train_model(model, X_train, y_train, X_val=X_test, y_val=y_test)
+draw_loss(hist)
 
-# # sauvegarder le modèle
-# joblib.dump(model, join('models','model_2024_08.pkl'))
+# sauvegarder le modèle
+joblib.dump(model, join('models','model_2024_08.pkl'))
 
 # charger le modèle
 model_2024_08 = joblib.load(join('models','model_2024_08.pkl'))

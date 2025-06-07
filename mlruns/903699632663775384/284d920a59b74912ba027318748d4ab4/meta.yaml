@@ -1,0 +1,15 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/284d920a59b74912ba027318748d4ab4/artifacts
+end_time: 1749328183107
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: active
+run_id: 284d920a59b74912ba027318748d4ab4
+run_name: honorable-goat-218
+run_uuid: 284d920a59b74912ba027318748d4ab4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749328129034
+status: 3
+tags: []
+user_id: marou

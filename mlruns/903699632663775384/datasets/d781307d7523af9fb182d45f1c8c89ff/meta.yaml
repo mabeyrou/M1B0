@@ -1,0 +1,11 @@
+digest: aca4a007
+name: dataset
+profile: '{"num_rows": 2000, "num_elements": 12000}'
+schema: '{"mlflow_colspec": [{"type": "string", "name": "sexe", "required": true},
+  {"type": "string", "name": "sport_licence", "required": true}, {"type": "string",
+  "name": "niveau_etude", "required": true}, {"type": "string", "name": "region",
+  "required": true}, {"type": "string", "name": "smoker", "required": true}, {"type":
+  "string", "name": "nationalit\u00e9_francaise", "required": true}]}'
+source: '{"tags": {"mlflow.user": "marou", "mlflow.source.name": "retrain.py", "mlflow.source.type":
+  "LOCAL", "mlflow.source.git.commit": "9fac65bef9d490079ec95cef42389ac26f8e3ec1"}}'
+source_type: code

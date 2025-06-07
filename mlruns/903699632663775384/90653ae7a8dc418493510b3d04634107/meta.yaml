@@ -1,0 +1,15 @@
+artifact_uri: file:///home/marou/Formation/Module1/M1B0/mlruns/903699632663775384/90653ae7a8dc418493510b3d04634107/artifacts
+end_time: 1749328620953
+entry_point_name: ''
+experiment_id: '903699632663775384'
+lifecycle_stage: active
+run_id: 90653ae7a8dc418493510b3d04634107
+run_name: skittish-sloth-972
+run_uuid: 90653ae7a8dc418493510b3d04634107
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749328571226
+status: 3
+tags: []
+user_id: marou
