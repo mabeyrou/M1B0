@@ -2,3 +2,5 @@ sources
 .venv
 __pycache__
 .env
+api/logs
+streamlit/logs
