@@ -30,12 +30,14 @@ async def health():
 async def predict(profile: Profile):
     try:
         processed_profile = preprocessor.transform(pd.DataFrame([profile.model_dump()]))
-        prediction = round(model_predict(model, processed_profile)[0],2)
-        logger.info(f'prediction: {prediction} avec le profile suivant : {profile}')
-        return {'prediction': str(prediction)}
-    except HTTPException as error:
-        logger.error(f'Something went wrong during prediction: {error}, with profile: {str(prediction)}')
-        raise HTTPException(status_code=500, detail='Something went wrong during prediction: {error}')
+        prediction_array = model_predict(model, processed_profile)
+        prediction_value = round(prediction_array[0],2)
+        logger.info(f'prediction: {prediction_value} avec le profile suivant : {profile}')
+        return {'prediction': str(prediction_value)}
+    except Exception as e:
+        logger.error(f'Prediction processing error for profile {profile.model_dump()}: {e}')
+        detail_message = f"Something went wrong during prediction: {e}"
+        raise HTTPException(status_code=500, detail=detail_message)
 
 @router.post('/retrain')
 async def retrain(epochs: int = Form(...), file: UploadFile | None = None):
@@ -58,21 +60,21 @@ async def retrain(epochs: int = Form(...), file: UploadFile | None = None):
         logger.debug('Starting spliting... (2/5)')
         X_train, X_test, y_train, y_test = split(X, y)
     except Exception as error:
-        logger.error('Something went wrong during preprocessing: {error}')
+        logger.error(f'Something went wrong during preprocessing: {error}')
         raise HTTPException(status_code=500, detail=f'Something went wrong during preprocessing.')
     
     try:
         logger.debug('Starting training... (3/5)')
         model, _ = train_model(model, X_train, y_train, X_val=X_test, y_val=y_test)
     except Exception as error:
-        logger.error('Something went wrong during training: {error}')
+        logger.error(f'Something went wrong during training: {error}')
         raise HTTPException(status_code=500, detail=f'Something went wrong during training.')
     
     try:
         logger.debug(f'Updating model in memory... (4/5)')
         joblib.dump(model, model_path)
     except Exception as error:
-        logger.error('Something went wrong while updating model in memory: {error}')
+        logger.error(f'Something went wrong while updating model in memory: {error}')
         raise HTTPException(status_code=500, detail=f'Something went wrong while updating model in memory.')
     
     try:
@@ -81,7 +83,7 @@ async def retrain(epochs: int = Form(...), file: UploadFile | None = None):
         perf = evaluate_performance(y_test, y_pred)
         logger.info(f'New model performances: {perf}')
 
-        return {'success': True, 'message': f'Retraining process was successfull with R² = {perf.get('R²')}.'}
+        return {'success': True, 'message': f"Retraining process was successfull with R² = {perf.get('R²')}."}
     except Exception as error:
-        logger.error('Something went wrong while calculatin new model performances: {error}')
+        logger.error(f'Something went wrong while calculatin new model performances: {error}')
         raise HTTPException(status_code=500, detail=f'Something went wrong while calculatin new model performances.')
