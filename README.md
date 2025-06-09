@@ -8,6 +8,18 @@ Salut à toi, explorateur du code, curieux de l'IA (ou juste là pour le café) 
 
 Pour que notre fusée de l'IA ne se transforme pas en vulgaire caillou, il faut un minimum de préparation.
 
+###### Environnement dockerisé
+Le projet peut être lancé depuis un container. Pour cela il faut d'abord copier le fichier d'environnement exemple comme suit :   
+```bash
+cp .env.example .env
+```
+Il faut ensuite monter le container et le lancer :
+```bash
+docker compose build
+docker compose up -d 
+docker compose exec api bash
+```
+
 ###### Le `.venv` (alias, notre petite bulle de sérénité)
 
 Pour éviter que ce projet ne mette le bazar dans ton PC (et vice-versa), on utilise un environnement virtuel. C'est comme une petite bulle magique où toutes les dépendances du projet vivent en harmonie, loin des conflits extérieurs.
@@ -99,6 +111,11 @@ Ce sont nos couteaux suisses du code. Chaque fichier est un expert dans son doma
 * `preprocess.py` : Le chef cuisinier des données. Il les nettoie, les coupe, les assaisonne pour qu'elles soient parfaites pour notre IA.
 * `print_draw.py` : L'artiste du groupe. Il transforme nos chiffres barbares en beaux graphiques pour que même ta grand-mère puisse comprendre (enfin, presque).
 
+#### Les tests
+Vous pouvez lancer les tests automatisés avec la commande :
+```bash
+pytest
+```
 ---
 
 On espère que cette petite virée dans notre projet t'a plu. N'hésite pas à jeter un œil au `main.py` pour lancer le grand spectacle !
